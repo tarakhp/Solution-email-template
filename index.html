@@ -234,6 +234,78 @@
                             </div>
                         </div>
                     </div>
+
+                    <div id="card3" class="card bg-light" hidden="hidden">
+                        <div class="card-header" style="color: #0096D6;">
+                            <h4 class="mb-0">
+                                <b> Email details :</b>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <div id="checkboxinput1" class="row">
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <input id="Solution_name" type="checkbox" class="form-check-input" name="check"
+                                                   value="Solution name:">
+                                        </div>
+                                        <label for="Solution_name" class="col-sm-6  col-form-label">Solution name</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <input id="Solution_version" type="checkbox" class="form-check-input" name="check"
+                                                   value="Solution version:">
+                                        </div>
+                                        <label for="Solution_version" class="col-sm-6  col-form-label">Solution version</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <input id="OS_version" type="checkbox" class="form-check-input" name="check"
+                                                   value="Server OS version: (Ex: Windows Server 2019…)
+">
+                                        </div>
+                                        <label for="OS_version" class="col-sm-6 col-form-label">Server OS version</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <input id="firmware_version" type="checkbox" class="form-check-input" name="check"
+                                                   value="Printer firmware version: (if available)">
+                                        </div>
+                                        <label for="firmware_version" class="col-sm-6 col-form-label">Printer firmware version</label>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <input id="critically_impacted" type="checkbox" class="form-check-input" name="check"
+                                                   value="How many production devices are critically impacted?">
+                                        </div>
+                                        <label for="critically_impacted" class="col-sm-6 col-form-label">How many production devices are critically impacted?</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <input id="capabilities" type="checkbox" class="form-check-input" name="check"
+                                                   value="Is there an impact in the printing capabilities of the business?">
+                                        </div>
+                                        <label for="capabilities" class="col-sm-6 col-form-label">Is there an impact in the printing capabilities of the business?</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <input id="because" type="checkbox" class="form-check-input" name="check"
+                                                   value="Is the company production down because of the issue?">
+                                        </div>
+                                        <label for="because" class="col-sm-6 col-form-label">Is the company production down because of the issue?</label>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </form>
@@ -404,6 +476,11 @@
             document.getElementById("card2").hidden = true;
             document.getElementById("id_div").hidden = false;
         }
+        if (value == "email") {
+            document.getElementById("card3").hidden = false;
+        } else {
+            document.getElementById("card3").hidden = true;
+        }
         if (value == "close" || value == "phone"|| value == "update") {
             document.getElementById("worker_name_div").hidden = true;
         } else {
@@ -455,16 +532,32 @@
     function setContent() {
         let template_content_value = "";
         if (document.getElementById("RequestreceivedfromEmail").value == "email") {
+            var b=0;
+            var emailextra="Meantime, kindly provide us with below information: <br/><br/>";
+            $("#checkboxinput1").find("input:checked").each(function (i, ob) {
+                emailextra += "⦿ "+$(ob).val() + "<br><br>";
+                b=1;
+            });
 
             template_content_value += "Hello " + document.getElementById("name_txt").value +
                 "<br/>" +
                 "<br/>" +
                 "I am " + document.getElementById("worker_name_txt").value + " from case manager team." + "<br/>" +
                 "A case has been created under the ID number " + document.getElementById("id_txt").value +
-                "and elevated to L2 service engineer who will contact you as soon as possible." +
-                "<br/>" +
-                "<br/>" +
-                "Thank you for contacting our team.";
+                "and elevated to L2 service engineer who will contact you as soon as possible." ;
+if(b==1){
+template_content_value+=emailextra+"\n" +
+    "I would be helpful for any clarification needed, so please don't hesitate. <br/>" +
+    "<br/>" +
+    "<br/>" +
+    "Wishing you a productive day ahead.";
+}else{
+    template_content_value += "<br/>" +
+        "<br/>" +
+        "Thank you for contacting our team.";
+}
+
+
         } else {
             if (document.getElementById("RequestreceivedfromEmail").value == "phone") {
                 template_content_value += "Hello again " + document.getElementById("name_txt").value + ",<br/>" +
@@ -534,16 +627,5 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
 />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-<script>
-    const phoneInputField = document.querySelector("#phone_txt");
-    const phoneInput = window.intlTelInput(phoneInputField, {
-        preferredCountries: ["tn", "us", "fr", "de"],
-        allowDropdown: true,
-        autoHideDialCode: false,
-        nationalMode: false,
-        utilsScript:
-            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-</script>
 </body>
 </html>
