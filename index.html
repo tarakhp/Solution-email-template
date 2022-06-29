@@ -72,7 +72,7 @@
                                             <select class="form-control" id="RequestreceivedfromEmail"
                                                     onchange="OnGradeChanged(this.value)">
                                                 <option selected="" disabled="" value="">Choose an option</option>
-                                                <option value="email">Email</option>
+                                                <option value="email">Email type</option>
                                                 <option value="phone">Phone</option>
                                                 <option value="template">Template</option>
                                                 <option value="update">Case update</option>
@@ -190,6 +190,13 @@
                                         </div>
                                         <label for="Troubleshoot" class="col-sm-6 col-form-label">Troubleshoot done by the
                                             customer/partner</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <input id="solution_name_checkbox" type="checkbox" class="form-check-input" name="check"
+                                                   value="Solution name:">
+                                        </div>
+                                        <label for="solution_name_checkbox" class="col-sm-6 col-form-label">Solution name</label>
                                     </div>
                                 </div>
                                 <div class="col-4">
@@ -542,8 +549,6 @@
                 " and elevated to L2 service engineer who will contact you as soon as possible." ;
 if(b==1){
 template_content_value+=emailextra+"\n" +
-    "I would be helpful for any clarification needed, so please don't hesitate. <br/>" +
-    "<br/>" +
     "<br/>" +
     "Wishing you a productive day ahead.";
 }else{
@@ -578,7 +583,7 @@ template_content_value+=emailextra+"\n" +
                         "I am "+document.getElementById("worker_name_txt").value+" from print solution team.<br/>" +
                         "<br/>" +
                         "<br/>" +
-                        "In order to assist you properly please provide me with the following information."+
+                        "In order to assist you properly please provide the following information."+
                         "<br/>" +
                         "<br/>" ;
 
@@ -603,7 +608,7 @@ template_content_value+=emailextra+"\n" +
                             " <br/>" +
                             " <br/>" +
                             "Thank you for your response.<br/>" +
-                            "The information has been updated on your case: "+document.getElementById("id_txt").value+" .<br/>" +
+                            "The information has been updated in your case: "+document.getElementById("id_txt").value+" .<br/>" +
                             " <br/>" +
                             "<br/>" +
                             "We remain at your disposal should you have any questions.";
