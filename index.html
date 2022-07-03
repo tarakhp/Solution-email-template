@@ -53,16 +53,38 @@
                                                    id="name_txt">
                                         </div>
                                     </div>
-                                    <div id="worker_name_div" class="form-group row">
-                                        <label for="worker_name_txt" class="col-sm-4 col-form-label">Worker name
-                                            :</label>
-                                        <div class="col-sm-8">
-                                            <input type="email" placeholder="Worker’s name" class="form-control"
-                                                   id="worker_name_txt">
+                                    <div id="human_div" hidden="hidden">
+                                        <div class="form-group row">
+                                            <label for="name_txt" class="col-sm-4 col-form-label">Human touch :</label>
+                                            <div class="col-sm-8">
+                                                <input type="name" placeholder="Human touch" class="form-control"
+                                                       id="human_txt">
+
+                                            </div>
+
+
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="form-check col-sm-6">
+                                                <input class="form-check-input" class="col-sm-2" type="radio"
+                                                       name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                                <br>
+                                                <label class="form-check-label" class="col-sm-4"
+                                                       for="flexRadioDefault1">
+                                                    At the first
+                                                </label>
+                                            </div>
+                                            <div class="form-check col-sm-6">
+                                                <input class="form-check-input" class="col-sm-2" type="radio"
+                                                       name="flexRadioDefault" id="flexRadioDefault2">
+                                                <br>
+                                                <label class="form-check-label" class="col-sm-4"
+                                                       for="flexRadioDefault2">
+                                                    At the end
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-
-
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group row">
@@ -233,27 +255,73 @@
                                 <div class="col-6">
                                     <div class="form-group row">
                                         <div class="col-sm-2">
-                                            <input id="Solution_name" type="checkbox" class="form-check-input"
+                                            <input id="Contact_name1" type="checkbox" class="form-check-input"
+                                                   name="check"
+                                                   value="Contact's name:">
+                                        </div>
+                                        <label for="Contact_name1" class="col-sm-6  col-form-label">Contact name</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <input id="physical_adress1" type="checkbox" class="form-check-input"
+                                                   name="check"
+                                                   value="Impacted Site physical address (with zip code):">
+                                        </div>
+                                        <label for="physical_adress1" class="col-sm-6  col-form-label">Impacted Site
+                                            physical address (with zip code)</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <input id="email_address1" type="checkbox" class="form-check-input"
+                                                   name="check"
+                                                   value="Contact’s email address:">
+                                        </div>
+                                        <label for="email_address1" class="col-sm-6 col-form-label">Contact’s email
+                                            address</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <input id="phone_number1" type="checkbox" class="form-check-input"
+                                                   name="check"
+                                                   value="Contact’s phone number:">
+                                        </div>
+                                        <label for="phone_number1" class="col-sm-6 col-form-label">Contact’s phone
+                                            number</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <input id="solution_name_checkbox1" type="checkbox" class="form-check-input"
                                                    name="check"
                                                    value="Solution name:">
                                         </div>
-                                        <label for="Solution_name" class="col-sm-6  col-form-label">Solution
+                                        <label for="solution_name_checkbox1" class="col-sm-6 col-form-label">Solution
                                             name</label>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-2">
-                                            <input id="Solution_version" type="checkbox" class="form-check-input"
-                                                   name="check"
-                                                   value="Solution version:">
+                                            <input id="solution_version_checkbox1" type="checkbox"
+                                                   class="form-check-input" name="check"
+                                                   value="Solution version (if available):">
                                         </div>
-                                        <label for="Solution_version" class="col-sm-6  col-form-label">Solution
-                                            version</label>
+                                        <label for="solution_version_checkbox1" class="col-sm-6 col-form-label">Solution
+                                            version (if available)</label>
                                     </div>
-
                                     <div class="form-group row">
                                         <div class="col-sm-2">
-                                            <input id="firmware_version" type="checkbox" class="form-check-input"
+                                            <input id="Issue_description1" type="checkbox" class="form-check-input"
                                                    name="check"
+                                                   value="Issue description:">
+                                        </div>
+                                        <label for="Issue_description1" class="col-sm-6 col-form-label">Issue
+                                            description</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <input id="Printer_Firmware_version1" type="checkbox"
+                                                   class="form-check-input" name="check"
                                                    value="How would you describe this Issue/support event:<br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Complete outage: All systems Printers/servers are completely down.<br/>
 
@@ -261,38 +329,18 @@
 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Standard issue:  Intermittent technical issues or questions regarding the device/solution.">
                                         </div>
-                                        <label for="firmware_version" class="col-sm-6 col-form-label">How would you
-                                            describe this Issue/support event</label>
+                                        <label for="Printer_Firmware_version1" class="col-sm-6 col-form-label">How would
+                                            you describe this Issue/support event</label>
                                     </div>
-
-
-                                </div>
-                                <div class="col-6">
                                     <div class="form-group row">
                                         <div class="col-sm-2">
-                                            <input id="critically_impacted" type="checkbox" class="form-check-input"
+                                            <input id="Troubleshoot1" type="checkbox" class="form-check-input"
                                                    name="check"
-                                                   value="How many production devices are critically impacted?">
+                                                   value="Troubleshoot done by the customer/partner:">
                                         </div>
-                                        <label for="critically_impacted" class="col-sm-6 col-form-label">How many
-                                            production devices are critically impacted?</label>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-2">
-                                            <input id="capabilities" type="checkbox" class="form-check-input"
-                                                   name="check"
-                                                   value="Is there an impact in the printing capabilities of the business?">
-                                        </div>
-                                        <label for="capabilities" class="col-sm-6 col-form-label">Is there an impact in
-                                            the printing capabilities of the business?</label>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-2">
-                                            <input id="because" type="checkbox" class="form-check-input" name="check"
-                                                   value="Is the company production down because of the issue?">
-                                        </div>
-                                        <label for="because" class="col-sm-6 col-form-label">Is the company production
-                                            down because of the issue?</label>
+                                        <label for="Troubleshoot1" class="col-sm-6 col-form-label">Troubleshoot done by
+                                            the
+                                            customer/partner</label>
                                     </div>
 
                                 </div>
@@ -304,50 +352,32 @@
                     <div id="card4" class="card bg-light" hidden="hidden">
                         <div class="card-header" style="color: #0096D6;">
                             <h4 class="mb-0">
-                                <b> Email details :</b>
+                                <b> Severity details :</b>
                             </h4>
                         </div>
                         <div class="card-body">
-                            <div id="checkboxinput2" class="row">
+                            <div class="row">
                                 <div class="col-12">
                                     <div class="form-group row">
-                                        <div class="col-sm-2">
-                                            <input id="issue_describe" type="checkbox" class="form-check-input"
-                                                   name="check"
-                                                   value="How would you describe this Issue/support event:">
-                                        </div>
-                                        <label for="issue_describe" class="col-sm-4  col-form-label">How would you
-                                            describe this Issue/support event</label>
+
+                                        <label for="issue_describe_text" class="col-sm-4  col-form-label">How would you
+                                            describe this Issue/support event :</label>
                                         <div class="col-sm-6">
-                                            <input type="text" class="form-control"
-                                                   id="issue_describe_text" placeholder="N/A">
+                                            <select class="form-control js-example-tags" id="issue_describe_text">
+                                                <option selected="" value="Issue severity : NA">NA</option>
+                                                <option value="Complete outage (Severity 1) : All systems Printers/servers are completely down.">
+                                                    Complete outage (Severity 1)
+                                                </option>
+                                                <option value="Major outage (Severity 2) : Some devices are still operational, not completely down.">
+                                                    Major outage (Severity 2)
+                                                </option>
+                                                <option value="Standard issue (Severity 3) : Intermittent technical issues or questions regarding the device/solution.">
+                                                    Standard issue (Severity 3)
+                                                </option>
+
+                                            </select>
                                         </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-2">
-                                            <input id="printing_capabilities" type="checkbox" class="form-check-input"
-                                                   name="check"
-                                                   value="Is there an impact on the printing capabilities of the business?:">
-                                        </div>
-                                        <label for="printing_capabilities" class="col-sm-4  col-form-label">Is there an
-                                            impact on the printing capabilities of the business?</label>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control"
-                                                   id="printing_capabilities_text" placeholder="N/A">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-sm-2">
-                                            <input id="company_production" type="checkbox" class="form-check-input"
-                                                   name="check"
-                                                   value="Is the company production down because of the issue ?:">
-                                        </div>
-                                        <label for="company_production" class="col-sm-4  col-form-label">Is the company
-                                            production down because of the issue ?</label>
-                                        <div class="col-sm-6">
-                                            <input type="text" class="form-control"
-                                                   id="company_production_text" placeholder="N/A">
-                                        </div>
+
                                     </div>
 
                                 </div>
@@ -530,11 +560,11 @@
         } else {
             document.getElementById("card3").hidden = true;
         }
-        if (value == "close" || value == "phone" || value == "update") {
-            document.getElementById("worker_name_div").hidden = true;
-        } else {
-            document.getElementById("worker_name_div").hidden = false;
 
+        if (value == "email" || value == "phone") {
+            document.getElementById("human_div").hidden = false;
+        } else {
+            document.getElementById("human_div").hidden = true;
         }
         if (value == "ATS" || value == "order") {
 
@@ -543,11 +573,11 @@
             } else {
                 document.getElementById("card4").hidden = true;
             }
-            document.getElementById("worker_name_div").hidden = true;
+
             document.getElementById("contact_name_div").hidden = true;
         } else {
             document.getElementById("card4").hidden = true;
-            document.getElementById("worker_name_div").hidden = false;
+
             document.getElementById("contact_name_div").hidden = false;
         }
 
@@ -613,26 +643,44 @@
 
             template_content_value += "Hello " + document.getElementById("name_txt").value +
                 "<br/>" +
-                "<br/>" +
-                "I am " + document.getElementById("worker_name_txt").value + " from case manager team." + "<br/>" +
-                "A case has been created under the ID number " + document.getElementById("id_txt").value +
-                " and elevated to L2 service engineer who will contact you as soon as possible.";
+                "<br/>";
+            if (document.getElementById("flexRadioDefault1").checked == true) {
+                template_content_value += document.getElementById("human_txt").value +
+                    "<br/>";
+            }
+
+            template_content_value += "A case has been created under the ID number " + document.getElementById("id_txt").value +
+                " and elevated to L2 service engineer who will contact you as soon as possible.<br/>";
             if (b == 1) {
-                template_content_value += emailextra + "<br/>" +
-                    "<br/>" +
-                    "Wishing you a productive day ahead.";
+                template_content_value += emailextra +
+                    "<br/>" ;
+                if (document.getElementById("flexRadioDefault2").checked == true) {
+                    template_content_value += document.getElementById("human_txt").value +
+                        "<br/>";
+                }
+                template_content_value += "Wishing you a productive day ahead.";
             } else {
+                if (document.getElementById("flexRadioDefault2").checked == true) {
+                    template_content_value += document.getElementById("human_txt").value;
+                }
                 template_content_value += "<br/>" +
                     "<br/>" +
                     "Thank you for contacting our team.";
             }
+
+
         } else {
             if (document.getElementById("RequestreceivedfromEmail").value == "phone") {
                 template_content_value += "Hello again " + document.getElementById("name_txt").value + ",<br/>" +
                     "<br/>" +
                     "Thank you for your previous call.<br/>" +
-                    "<br/>" +
-                    "A case has been successfully created and elevated to our L2" +
+                    "<br/>"
+                if(document.getElementById("flexRadioDefault1").checked==true){
+                    template_content_value += document.getElementById("human_txt").value +
+                        "<br/>" +
+                        "<br/>" ;
+                }
+                template_content_value +="A case has been successfully created and elevated to our L2" +
                     " service engineer team Under the ID: " + document.getElementById("id_txt").value + " " +
                     "<br/>" +
                     "You will be contacted as soon as possible." +
@@ -640,15 +688,16 @@
                     "Please feel free to contact our team on our PDL: " +
                     "printsolutions.support@hp.com for any future software solution-related " +
                     "support event." +
-                    "<br/>" +
-                    "We’ll be happy to assist.";
+                    "<br/>"
+                if(document.getElementById("flexRadioDefault2").checked==true){
+                    template_content_value += document.getElementById("human_txt").value +
+                        "<br/>" +
+                        "<br/>" ;
+                }
+                template_content_value +="We’ll be happy to assist.";
             } else {
                 if (document.getElementById("RequestreceivedfromEmail").value == "template") {
                     template_content_value += "Hello " + document.getElementById("name_txt").value + "," +
-                        "<br/>" +
-                        "<br/>" +
-                        "<br/>" +
-                        "I am " + document.getElementById("worker_name_txt").value + " from print solution team.<br/>" +
                         "<br/>" +
                         "<br/>" +
                         "In order to assist you properly please provide the following information." +
@@ -686,13 +735,9 @@
                                 template_content_value += "Hello Team,<br/>" +
                                     "<br/>" +
                                     "<br/>" +
-                                    "Please note that case " + document.getElementById("id_txt").value + " is critical and requires urgent action.<br/><br/>";
-                                $("#checkboxinput2").find("input:checked").each(function (i, ob) {
-                                    console.log($(ob).attr("id") + "_text")
-                                    template_content_value += "⦿ " + $(ob).val() + " " + document.getElementById($(ob).attr("id") + "_text").value + "<br><br>";
-                                });
-
-                                template_content_value += "<br/>" +
+                                    "Please note that case " + document.getElementById("id_txt").value + " is critical and requires urgent action.<br/><br/>" +
+                                    document.getElementById("issue_describe_text").value +
+                                    "<br/>" +
                                     "<br/>" +
                                     "Thank you in advance.";
                             } else {
@@ -701,7 +746,7 @@
                                     "<br/>" +
                                     "Hope you are doing well, <br/>" +
                                     "could you please request a work order for a technician to troubleshoot <br/>" +
-                                    "the issue for this case  "+document.getElementById("id_txt").value+".<br/>" +
+                                    "the issue for this case  " + document.getElementById("id_txt").value + ".<br/>" +
                                     "<br/>" +
                                     " <br/>" +
                                     "<br/>" +
