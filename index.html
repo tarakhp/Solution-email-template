@@ -47,17 +47,17 @@
 
 
                                     <div id="contact_name_div" class="form-group row">
-                                        <label for="name_txt" class="col-sm-4 col-form-label">Contact name :</label>
+                                        <label for="name_txt" class="col-sm-4 col-form-label">Sender(s) Name :</label>
                                         <div class="col-sm-8">
-                                            <input type="name" placeholder="Contact’s name" class="form-control"
+                                            <input type="name" placeholder="Sender(s) Name" class="form-control"
                                                    id="name_txt">
                                         </div>
                                     </div>
                                     <div id="human_div" hidden="hidden">
                                         <div class="form-group row">
-                                            <label for="name_txt" class="col-sm-4 col-form-label">Human touch :</label>
+                                            <label for="human_txt" class="col-sm-4 col-form-label">Personalization :</label>
                                             <div class="col-sm-8">
-                                                <input type="name" placeholder="Human touch" class="form-control"
+                                                <input type="name" placeholder="Personalization" class="form-control"
                                                        id="human_txt">
 
                                             </div>
@@ -71,7 +71,7 @@
                                                 <br>
                                                 <label class="form-check-label" class="col-sm-4"
                                                        for="flexRadioDefault1">
-                                                    At the first
+                                                    At the beginning
                                                 </label>
                                             </div>
                                             <div class="form-check col-sm-6">
@@ -379,6 +379,16 @@
                                         </div>
 
                                     </div>
+                                    <div class="form-group row">
+                                        <label for="additional_info" class="col-sm-4 col-form-label">Additional info :</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" placeholder="Additional info" class="form-control"
+                                                   id="additional_info">
+
+                                        </div>
+
+
+                                    </div>
 
                                 </div>
 
@@ -681,7 +691,7 @@
                         "<br/>" ;
                 }
                 template_content_value +="A case has been successfully created and elevated to our L2" +
-                    " service engineer team Under the ID: " + document.getElementById("id_txt").value + " " +
+                    " service engineer team under the ID: " + document.getElementById("id_txt").value + " " +
                     "<br/>" +
                     "You will be contacted as soon as possible." +
                     "<br/>" +
@@ -726,7 +736,7 @@
                                 " <br/>" +
                                 " <br/>" +
                                 "Thank you for your response.<br/>" +
-                                "The information has been updated in your case: " + document.getElementById("id_txt").value + " .<br/>" +
+                                "This information has been added to your case : " + document.getElementById("id_txt").value + " .<br/>" +
                                 " <br/>" +
                                 "<br/>" +
                                 "We remain at your disposal should you have any questions.";
@@ -736,8 +746,11 @@
                                     "<br/>" +
                                     "<br/>" +
                                     "Please note that case " + document.getElementById("id_txt").value + " is critical and requires urgent action.<br/><br/>" +
-                                    document.getElementById("issue_describe_text").value +
-                                    "<br/>" +
+                                    document.getElementById("issue_describe_text").value ;
+                                if(document.getElementById("additional_info").value!="") {
+                                    template_content_value +="<br/><br/>Additional info : "+ document.getElementById("additional_info").value;
+                                }
+                                    template_content_value +="<br/>" +
                                     "<br/>" +
                                     "Thank you in advance.";
                             } else {
