@@ -53,35 +53,68 @@
                                                    id="name_txt">
                                         </div>
                                     </div>
+                                    <div id="update_div" hidden="hidden">
+                                        <div class="form-group row">
+                                            <div class="form-check col-sm-6">
+                                                <input class="form-check-input" class="col-sm-2" type="radio"
+                                                       name="flexRadioDefault" id="update_radio1"
+                                                       value="Your case  has been  updated  with this new information :">
+                                                <br>
+                                                <label class="form-check-label" class="col-sm-4"
+                                                       for="update_radio1">
+                                                    Your case has been updated with this new information :
+                                                </label>
+                                            </div>
+                                            <div class="form-check col-sm-6">
+                                                <input class="form-check-input" class="col-sm-2" type="radio"
+                                                       name="flexRadioDefault"
+                                                       value="This information has been added to your case :"
+                                                       id="update_radio2">
+                                                <br>
+                                                <label class="form-check-label" class="col-sm-4"
+                                                       for="update_radio2">
+                                                    This information has been added to your case :
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                     <div id="human_div" hidden="hidden">
                                         <div class="form-group row">
-                                            <label for="human_txt" class="col-sm-4 col-form-label">Personalization :</label>
+                                            <div class="form-check col-sm-4">
+                                                <input class="form-check-input" class="col-sm-2" type="checkbox"
+                                                       onclick="checkedbox(this.id)"
+                                                       name="flexRadioDefault" id="human1">
+                                                <br>
+                                                <label class="form-check-label" class="col-sm-4"
+                                                       for="human1">
+                                                    At the beginning
+                                                </label>
+                                            </div>
                                             <div class="col-sm-8">
-                                                <input type="name" placeholder="Personalization" class="form-control"
-                                                       id="human_txt">
+                                                <input type="name" placeholder="At the beginning" class="form-control"
+                                                       id="human1_txt" hidden="hidden">
 
                                             </div>
 
 
                                         </div>
                                         <div class="form-group row">
-                                            <div class="form-check col-sm-6">
-                                                <input class="form-check-input" class="col-sm-2" type="radio"
-                                                       name="flexRadioDefault" id="flexRadioDefault1" checked>
+
+                                            <div class="form-check col-sm-4">
+                                                <input class="form-check-input" class="col-sm-2" type="checkbox"
+                                                       onclick="checkedbox(this.id)"
+                                                       name="flexRadioDefault" id="human2">
                                                 <br>
                                                 <label class="form-check-label" class="col-sm-4"
-                                                       for="flexRadioDefault1">
-                                                    At the beginning
-                                                </label>
-                                            </div>
-                                            <div class="form-check col-sm-6">
-                                                <input class="form-check-input" class="col-sm-2" type="radio"
-                                                       name="flexRadioDefault" id="flexRadioDefault2">
-                                                <br>
-                                                <label class="form-check-label" class="col-sm-4"
-                                                       for="flexRadioDefault2">
+                                                       for="human2">
                                                     At the end
                                                 </label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input type="name" placeholder="At the end" class="form-control"
+                                                       id="human2_txt" hidden="hidden">
+
                                             </div>
                                         </div>
                                     </div>
@@ -380,7 +413,8 @@
 
                                     </div>
                                     <div class="form-group row">
-                                        <label for="additional_info" class="col-sm-4 col-form-label">Additional info :</label>
+                                        <label for="additional_info" class="col-sm-4 col-form-label">Additional info
+                                            :</label>
                                         <div class="col-sm-6">
                                             <input type="text" placeholder="Additional info" class="form-control"
                                                    id="additional_info">
@@ -557,6 +591,18 @@
 <p id="res"></p>
 
 <script>
+    document.getElementById("update_radio1").checked = true;
+
+    function checkedbox(valueid) {
+        if (document.getElementById(valueid).checked == true) {
+            document.getElementById(valueid + "_txt").hidden = false;
+        } else {
+            document.getElementById(valueid + "_txt").hidden = true;
+            document.getElementById(valueid + "_txt").value = null;
+        }
+    }
+
+
     function OnGradeChanged(value) {
         if (value == "template") {
             document.getElementById("card2").hidden = false;
@@ -590,6 +636,13 @@
 
             document.getElementById("contact_name_div").hidden = false;
         }
+        if (value == "update") {
+            document.getElementById("update_div").hidden = false;
+
+        } else {
+            document.getElementById("update_div").hidden = true;
+        }
+
 
     }
 
@@ -652,28 +705,24 @@
             });
 
             template_content_value += "Hello " + document.getElementById("name_txt").value +
-                "<br/>" +
                 "<br/>";
-            if (document.getElementById("flexRadioDefault1").checked == true) {
-                template_content_value += document.getElementById("human_txt").value +
-                    "<br/>";
-            }
+
+            template_content_value += document.getElementById("human1_txt").value +
+                "<br/>";
+
 
             template_content_value += "A case has been created under the ID number " + document.getElementById("id_txt").value +
                 " and elevated to L2 service engineer who will contact you as soon as possible.<br/>";
             if (b == 1) {
                 template_content_value += emailextra +
-                    "<br/>" ;
-                if (document.getElementById("flexRadioDefault2").checked == true) {
-                    template_content_value += document.getElementById("human_txt").value +
-                        "<br/>";
-                }
+                    "<br/>";
+                template_content_value += document.getElementById("human2_txt").value +
+                    "<br/>";
+
                 template_content_value += "Wishing you a productive day ahead.";
             } else {
-                if (document.getElementById("flexRadioDefault2").checked == true) {
-                    template_content_value += document.getElementById("human_txt").value;
-                }
-                template_content_value += "<br/>" +
+                template_content_value += document.getElementById("human2_txt").value +
+                    "<br/>" +
                     "<br/>" +
                     "Thank you for contacting our team.";
             }
@@ -684,13 +733,13 @@
                 template_content_value += "Hello again " + document.getElementById("name_txt").value + ",<br/>" +
                     "<br/>" +
                     "Thank you for your previous call.<br/>" +
-                    "<br/>"
-                if(document.getElementById("flexRadioDefault1").checked==true){
-                    template_content_value += document.getElementById("human_txt").value +
-                        "<br/>" +
-                        "<br/>" ;
-                }
-                template_content_value +="A case has been successfully created and elevated to our L2" +
+
+
+                    document.getElementById("human1_txt").value +
+
+                    "<br/>" +
+
+                    "A case has been successfully created and elevated to our L2" +
                     " service engineer team under the ID: " + document.getElementById("id_txt").value + " " +
                     "<br/>" +
                     "You will be contacted as soon as possible." +
@@ -698,13 +747,13 @@
                     "Please feel free to contact our team on our PDL: " +
                     "printsolutions.support@hp.com for any future software solution-related " +
                     "support event." +
-                    "<br/>"
-                if(document.getElementById("flexRadioDefault2").checked==true){
-                    template_content_value += document.getElementById("human_txt").value +
-                        "<br/>" +
-                        "<br/>" ;
-                }
-                template_content_value +="We’ll be happy to assist.";
+                    "<br/>" +
+
+                    document.getElementById("human2_txt").value +
+
+                    "<br/>" +
+
+                    "We’ll be happy to assist.";
             } else {
                 if (document.getElementById("RequestreceivedfromEmail").value == "template") {
                     template_content_value += "Hello " + document.getElementById("name_txt").value + "," +
@@ -713,7 +762,6 @@
                         "In order to assist you properly please provide the following information." +
                         "<br/>" +
                         "<br/>";
-
 
                     $("#checkboxinput").find("input:checked").each(function (i, ob) {
                         template_content_value += "⦿ " + $(ob).val() + "<br><br>";
@@ -735,22 +783,27 @@
                             template_content_value += "Hello " + document.getElementById("name_txt").value + ",<br/>" +
                                 " <br/>" +
                                 " <br/>" +
-                                "Thank you for your response.<br/>" +
-                                "This information has been added to your case : " + document.getElementById("id_txt").value + " .<br/>" +
+                                "Thank you for your response.<br/>"
+                            $("#update_div").find("input:checked").each(function (i, ob) {
+                                template_content_value += $(ob).val();
+                            });
+                            template_content_value += " " + document.getElementById("id_txt").value + " .<br/>" +
                                 " <br/>" +
                                 "<br/>" +
                                 "We remain at your disposal should you have any questions.";
+
+
                         } else {
                             if (document.getElementById("RequestreceivedfromEmail").value == "ATS") {
                                 template_content_value += "Hello Team,<br/>" +
                                     "<br/>" +
                                     "<br/>" +
                                     "Please note that case " + document.getElementById("id_txt").value + " is critical and requires urgent action.<br/><br/>" +
-                                    document.getElementById("issue_describe_text").value ;
-                                if(document.getElementById("additional_info").value!="") {
-                                    template_content_value +="<br/><br/>Additional info : "+ document.getElementById("additional_info").value;
+                                    document.getElementById("issue_describe_text").value;
+                                if (document.getElementById("additional_info").value != "") {
+                                    template_content_value += "<br/><br/>Additional info : " + document.getElementById("additional_info").value;
                                 }
-                                    template_content_value +="<br/>" +
+                                template_content_value += "<br/>" +
                                     "<br/>" +
                                     "Thank you in advance.";
                             } else {
