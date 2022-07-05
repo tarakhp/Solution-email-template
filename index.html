@@ -131,7 +131,6 @@
                                                 <option value="phone">Phone request reply</option>
                                                 <option value="template">Template</option>
                                                 <option value="ATS">ATS critical case</option>
-                                                <option value="order">Work order request</option>
                                                 <option value="update">Case update</option>
                                                 <option value="close">Case closing</option>
                                             </select>
@@ -622,7 +621,7 @@
         } else {
             document.getElementById("human_div").hidden = true;
         }
-        if (value == "ATS" || value == "order") {
+        if (value == "ATS" ) {
 
             if (value == "ATS") {
                 document.getElementById("card4").hidden = false;
@@ -684,7 +683,7 @@
                         if (document.getElementById("RequestreceivedfromEmail").value == "ATS") {
                             case_title += "Critical case : " + document.getElementById("id_txt").value;
                         } else {
-                            case_title += "WO/Creation for the case num : " + document.getElementById("id_txt").value;
+                            /*case_title += "WO/Creation for the case num : " + document.getElementById("id_txt").value;*/
                         }
                     }
 
@@ -807,7 +806,7 @@
                                     "<br/>" +
                                     "Thank you in advance.";
                             } else {
-                                template_content_value += "Hello,<br/>" +
+                                /*template_content_value += "Hello,<br/>" +
                                     " <br/>" +
                                     "<br/>" +
                                     "Hope you are doing well, <br/>" +
@@ -816,7 +815,7 @@
                                     "<br/>" +
                                     " <br/>" +
                                     "<br/>" +
-                                    "Thanks."
+                                    "Thanks."*/
                             }
                         }
                     }
