@@ -183,36 +183,40 @@
                                         <div class="col-sm-2">
                                             <input id="Contact_name" type="checkbox" class="form-check-input"
                                                    name="check"
-                                                   value="Contact's name:">
+                                                   value="Contact's name:" onchange="enableCheck(this.id)" >
                                         </div>
-                                        <label for="Contact_name" class="col-sm-6  col-form-label">Contact name</label>
+                                        <label for="Contact_name" class="col-sm-4  col-form-label">Contact name</label>
+                                        <input type="text" placeholder="" class="form-control col-sm-6" id="Contact_name_text" disabled>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-2">
                                             <input id="physical_adress" type="checkbox" class="form-check-input"
                                                    name="check"
-                                                   value="Impacted Site physical address (with zip code):">
+                                                   value="Impacted Site physical address (with zip code):" onchange="enableCheck(this.id)">
                                         </div>
-                                        <label for="physical_adress" class="col-sm-6  col-form-label">Impacted Site
+                                        <label for="physical_adress" class="col-sm-4  col-form-label">Impacted Site
                                             physical address (with zip code)</label>
+                                        <input type="text" placeholder="" class="form-control col-sm-6" id="physical_adress_text" disabled>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-2">
                                             <input id="email_address" type="checkbox" class="form-check-input"
                                                    name="check"
-                                                   value="Contact’s email address:">
+                                                   value="Contact’s email address:" onchange="enableCheck(this.id)">
                                         </div>
-                                        <label for="email_address" class="col-sm-6 col-form-label">Contact’s email
+                                        <label for="email_address" class="col-sm-4 col-form-label">Contact’s email
                                             address</label>
+                                        <input type="text" placeholder="" class="form-control col-sm-6" id="email_address_text" disabled>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-2">
                                             <input id="phone_number" type="checkbox" class="form-check-input"
                                                    name="check"
-                                                   value="Contact’s phone number:">
+                                                   value="Contact’s phone number:" onchange="enableCheck(this.id)">
                                         </div>
-                                        <label for="phone_number" class="col-sm-6 col-form-label">Contact’s phone
+                                        <label for="phone_number" class="col-sm-4 col-form-label">Contact’s phone
                                             number</label>
+                                        <input type="text" placeholder="" class="form-control col-sm-6" id="phone_number_text" disabled>
                                     </div>
 
                                 </div>
@@ -221,28 +225,31 @@
                                         <div class="col-sm-2">
                                             <input id="solution_name_checkbox" type="checkbox" class="form-check-input"
                                                    name="check"
-                                                   value="Solution name:">
+                                                   value="Solution name:" onchange="enableCheck(this.id)">
                                         </div>
-                                        <label for="solution_name_checkbox" class="col-sm-6 col-form-label">Solution
+                                        <label for="solution_name_checkbox" class="col-sm-4 col-form-label">Solution
                                             name</label>
+                                        <input type="text" placeholder="" class="form-control col-sm-6" id="solution_name_checkbox_text" disabled>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-2">
                                             <input id="solution_version_checkbox" type="checkbox"
                                                    class="form-check-input" name="check"
-                                                   value="Solution version (if available):">
+                                                   value="Solution version (if available):" onchange="enableCheck(this.id)">
                                         </div>
-                                        <label for="solution_version_checkbox" class="col-sm-6 col-form-label">Solution
+                                        <label for="solution_version_checkbox" class="col-sm-4 col-form-label">Solution
                                             version (if available)</label>
+                                        <input type="text" placeholder="" class="form-control col-sm-6" id="solution_version_checkbox_text" disabled>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-2">
                                             <input id="Issue_description" type="checkbox" class="form-check-input"
                                                    name="check"
-                                                   value="Issue description:">
+                                                   value="Issue description:" onchange="enableCheck(this.id)">
                                         </div>
-                                        <label for="Issue_description" class="col-sm-6 col-form-label">Issue
+                                        <label for="Issue_description" class="col-sm-4 col-form-label">Issue
                                             description</label>
+                                        <input type="text" placeholder="" class="form-control col-sm-6" id="Issue_description_text" disabled>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-2">
@@ -255,23 +262,22 @@
 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Standard issue:  Intermittent technical issues or questions regarding the device/solution.">
                                         </div>
-                                        <label for="Printer_Firmware_version" class="col-sm-6 col-form-label">How would
+                                        <label for="Printer_Firmware_version" class="col-sm-8 col-form-label">How would
                                             you describe this Issue/support event</label>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-2">
                                             <input id="Troubleshoot" type="checkbox" class="form-check-input"
                                                    name="check"
-                                                   value="Troubleshoot done by the customer/partner:">
+                                                   value="Troubleshoot done by the customer/partner:" onchange="enableCheck(this.id)">
                                         </div>
-                                        <label for="Troubleshoot" class="col-sm-6 col-form-label">Troubleshoot done by
+                                        <label for="Troubleshoot" class="col-sm-4 col-form-label">Troubleshoot done by
                                             the
                                             customer/partner</label>
+                                        <input type="text" placeholder="" class="form-control col-sm-6" id="Troubleshoot_text" disabled>
                                     </div>
 
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
@@ -592,6 +598,15 @@
 <script>
     document.getElementById("update_radio1").checked = true;
 
+    function enableCheck(valueid){
+        if (document.getElementById(valueid).checked == true) {
+            document.getElementById(valueid + "_text").disabled=false;
+        }else{
+            document.getElementById(valueid + "_text").disabled=true;
+            document.getElementById(valueid + "_text").value=null;
+        }
+    }
+
     function checkedbox(valueid) {
         if (document.getElementById(valueid).checked == true) {
             document.getElementById(valueid + "_txt").hidden = false;
@@ -763,7 +778,8 @@
                         "<br/>";
 
                     $("#checkboxinput").find("input:checked").each(function (i, ob) {
-                        template_content_value += "⦿ " + $(ob).val() + "<br><br>";
+                        template_content_value += "⦿ " + $(ob).val() +" "+document.getElementById($(ob).attr('id')+"_text").value +"<br><br>";
+
                     });
 
                 } else {
